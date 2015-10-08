@@ -75,6 +75,7 @@ class Webidia_Framework_Public {
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/webidia-framework-public.css', array(), $this->version, 'all' );
 		wp_enqueue_style( 'megamenu-' . $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/megamenu.css', array(), $this->version, 'all' );
+		wp_enqueue_style( 'googlemap-' . $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/customgooglemap.css', array(), $this->version, 'all' );
 
 	}
 
@@ -96,8 +97,9 @@ class Webidia_Framework_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/webidia-framework-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name."02" , plugin_dir_url( __FILE__ ) . 'js/gmapsregister.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name."01" , plugin_dir_url( __FILE__ ) . 'js/gmaps.js', array( 'jquery' ), $this->version, false );
 
 	}
 

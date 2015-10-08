@@ -16,7 +16,7 @@
 function wf_vc_setup() {
    
    // Declare Theme Integration
-   vc_set_as_theme();
+	vc_set_as_theme();
 
    // Templates Directory
    $dir = plugin_dir_path( dirname( __FILE__ ) . 'includes/vc/templates' );
@@ -31,7 +31,6 @@ add_action( 'vc_before_init', 'wf_vc_setup' );
 \*------------------------------------*/
 
 function wf_vc_custom() {
-
 	// Modal
 	vc_map( array(
 		"name"        => __( "WF - Modal Box", "webidia" ),
@@ -222,6 +221,139 @@ function wf_vc_custom() {
       "base" => "wf_google_maps",
       "class" => "",
       "category" => __( "Content", "webidia"),
+      "params"      => array(
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "Latitude", "webidia" ),
+				"param_name"  => "lat",
+				"value"       => "-12.043333",
+				"description" => __( "Enter Latitude ", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "Longitude", "webidia" ),
+				"param_name"  => "lng",
+				"value"       => "-77.028333",
+				"description" => __( "Enter Longitude", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "HideInfoWindows", "webidia" ),
+				"param_name"  => "hideinfowindows",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "navigationControl", "webidia" ),
+				"param_name"  => "navigationcontrol",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "mapTypeControl", "webidia" ),
+				"param_name"  => "maptypecontrol",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "zoom", "webidia" ),
+				"param_name"  => "zoom",
+				"value"       => __(""),
+				"std"		  => "13",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "Title", "webidia" ),
+				"param_name"  => "title",
+				"value"       => __(""),
+				"std"		  => "Test",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "ZoomControl", "webidia" ),
+				"param_name"  => "zoomcontrol",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "StreetViewControl", "webidia" ),
+				"param_name"  => "streetviewcontrol",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "fasle",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "DisableDoubleClickZoom", "webidia" ),
+				"param_name"  => "disabledoubledcickzoom",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "ScaleControl", "webidia" ),
+				"param_name"  => "scalecontrol",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Draggable", "webidia" ),
+				"param_name"  => "draggable",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Scrollwheel", "webidia" ),
+				"param_name"  => "scrollwheel",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "Height", "webidia" ),
+				"param_name"  => "height",
+				"value"       => "200",
+				"description" => __( "Height for Google map in pixel", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "Width", "webidia" ),
+				"param_name"  => "width",
+				"value"       => "200",
+				"description" => __( "Width for Google map in pixel", "webidia" )
+			),
+		)
    ) );
 
    // Animated Stats

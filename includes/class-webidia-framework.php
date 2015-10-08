@@ -257,6 +257,7 @@ class Webidia_Framework {
 	public function get_wf_shortcode() {
 		include_once( plugin_dir_path( dirname( __FILE__ ) ) . 'includes/shortcode/modals.php' );
 		include_once( plugin_dir_path( dirname( __FILE__ ) ) . 'includes/shortcode/tooltips.php' );
+		include_once( plugin_dir_path( dirname( __FILE__ ) ) . 'includes/shortcode/wf_googlemaps.php' );
     }
 
 }

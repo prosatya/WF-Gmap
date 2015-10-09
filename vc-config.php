@@ -342,7 +342,7 @@ function wf_vc_custom() {
 				"holder"      => "div",
 				"heading"     => __( "Height", "webidia" ),
 				"param_name"  => "height",
-				"value"       => "200",
+				"value"       => "200px",
 				"description" => __( "Height for Google map in pixel", "webidia" )
 			),
 			array(
@@ -350,7 +350,7 @@ function wf_vc_custom() {
 				"holder"      => "div",
 				"heading"     => __( "Width", "webidia" ),
 				"param_name"  => "width",
-				"value"       => "200",
+				"value"       => "200px",
 				"description" => __( "Width for Google map in pixel", "webidia" )
 			),
 		)

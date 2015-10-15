@@ -39,6 +39,7 @@ function wf_vc_custom() {
 		"base"        => "modal",
 		"class"       => "",
 		"category"    => __( "Content", "webidia"),
+		"icon" => "vc_google_map",
 		"params"      => array(
 			array(
 				"type"        => "textfield",
@@ -64,6 +65,7 @@ function wf_vc_custom() {
 				"value"       => __( "<p>I am test text block for modal.</p>", "webidia" ),
 				"description" => __( "Enter your content for the modal element", "webidia" )
 			),
+
 			array(
 				'type'        => 'dropdown',
 				'heading'     => "Modal Type",
@@ -222,23 +224,32 @@ function wf_vc_custom() {
       "class" => "",
       "category" => __( "Content", "webidia"),
       "params"      => array(
-			array(
+			// array(
+			// 	"type"        => "textfield",
+			// 	"holder"      => "div",
+			// 	"heading"     => __( "Latitude", "webidia" ),
+			// 	"param_name"  => "lat",
+			// 	"value"       => "-12.043333",
+			// 	"description" => __( "Enter Latitude ", "webidia" )
+			// ),
+			// array(
+			// 	"type"        => "textfield",
+			// 	"holder"      => "div",
+			// 	"heading"     => __( "Longitude", "webidia" ),
+			// 	"param_name"  => "lng",
+			// 	"value"       => "-77.028333",
+			// 	"description" => __( "Enter Longitude", "webidia" )
+			// ),
+				array(
 				"type"        => "textfield",
 				"holder"      => "div",
-				"heading"     => __( "Latitude", "webidia" ),
-				"param_name"  => "lat",
-				"value"       => "-12.043333",
-				"description" => __( "Enter Latitude ", "webidia" )
+				"heading"     => __( "Address", "webidia" ),
+				"param_name"  => "address",
+				"value"       => "",
+				"description" => __( "Enter Address", "webidia" )
 			),
-			array(
-				"type"        => "textfield",
-				"holder"      => "div",
-				"heading"     => __( "Longitude", "webidia" ),
-				"param_name"  => "lng",
-				"value"       => "-77.028333",
-				"description" => __( "Enter Longitude", "webidia" )
-			),
-			array(
+
+		array(
 				"type"        => "dropdown",
 				"holder"      => "div",
 				"heading"     => __( "HideInfoWindows", "webidia" ),
@@ -247,6 +258,626 @@ function wf_vc_custom() {
 				"std"		  => "true",
 				"description" => __( "", "webidia" )
 			),
+		array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"heading"     => __( "Infowindowstext", "webidia" ),
+				"param_name"  => "infowindowstext",
+				"value"       => "",
+				'dependency' => array(
+					'element' => 'hideinfowindows',
+					'value'   => array( 'false' ),
+				),
+				"description" => __( "Enter Infowindows content", "webidia" )
+			),
+				array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Add Marker1", "webidia" ),
+				"param_name"  => "showmark1",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				'dependency' => array(
+					'element' => 'hideinfowindows',
+					'value'   => array( 'false' ),
+				),
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "1st Marker Address", "webidia" ),
+				"param_name"  => "mark1add",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark1',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter 1st Marker  Address", "webidia" )
+			),
+			
+			array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"heading"     => __( "1st Marker InfoBox", "webidia" ),
+				"param_name"  => "mark1info",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark1',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter Infowindows content", "webidia" )
+			),	
+
+
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Add 2nd Marker", "webidia" ),
+				"param_name"  => "showmark2",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				'dependency' => array(
+					'element' => 'hideinfowindows',
+					'value'   => array( 'false' ),
+				),
+				"description" => __( "", "webidia" )
+			),
+
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "2nd Marker Address", "webidia" ),
+				"param_name"  => "mark2add",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark2',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter 2nd  Marker  Address", "webidia" )
+			),
+			
+			array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"heading"     => __( "2nd Marker InfoBox", "webidia" ),
+				"param_name"  => "mark2info",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark2',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter Infowindows content", "webidia" )
+			),	
+
+
+
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Add 3rd Marker", "webidia" ),
+				"param_name"  => "showmark3",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				'dependency' => array(
+					'element' => 'showmark2',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "3rd Marker Address", "webidia" ),
+				"param_name"  => "mark3add",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark3',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter 3rd Marker  Address", "webidia" )
+			),
+		
+			array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"heading"     => __( "3rd Marker InfoBox", "webidia" ),
+				"param_name"  => "mark3info",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark3',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter Infowindows content", "webidia" )
+			),	
+
+			
+
+		array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Add 4th Marker", "webidia" ),
+				"param_name"  => "showmark4",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				'dependency' => array(
+					'element' => 'showmark3',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "4th Marker Address", "webidia" ),
+				"param_name"  => "mark4add",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark4',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter 4th Marker  Address", "webidia" )
+			),
+		
+			array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"heading"     => __( "4th Marker InfoBox", "webidia" ),
+				"param_name"  => "mark4info",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark4',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter Infowindows content", "webidia" )
+			),	
+
+
+		array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Add 5th Marker", "webidia" ),
+				"param_name"  => "showmark5",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				'dependency' => array(
+					'element' => 'showmark4',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "5th Marker Address", "webidia" ),
+				"param_name"  => "mark5add",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark5',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter 5th Marker  Address", "webidia" )
+			),
+		
+			array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"heading"     => __( "5th Marker InfoBox", "webidia" ),
+				"param_name"  => "mark5info",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark5',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter Infowindows content", "webidia" )
+			),	
+
+
+
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Add 6th Marker", "webidia" ),
+				"param_name"  => "showmark6",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				'dependency' => array(
+					'element' => 'showmark5',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "6th Marker Address", "webidia" ),
+				"param_name"  => "mark6add",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark6',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter 6th Marker  Address", "webidia" )
+			),
+		
+			array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"heading"     => __( "6th Marker InfoBox", "webidia" ),
+				"param_name"  => "mark6info",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark6',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter Infowindows content", "webidia" )
+			),	
+
+
+
+
+					array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Add 7th Marker", "webidia" ),
+				"param_name"  => "showmark7",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				'dependency' => array(
+					'element' => 'showmark6',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "7th Marker Address", "webidia" ),
+				"param_name"  => "mark7add",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark7',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter 7th Marker  Address", "webidia" )
+			),
+		
+			array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"heading"     => __( "7th Marker InfoBox", "webidia" ),
+				"param_name"  => "mark7info",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark7',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter Infowindows content", "webidia" )
+			),	
+
+
+
+						array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Add 8th Marker", "webidia" ),
+				"param_name"  => "showmark8",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				'dependency' => array(
+					'element' => 'showmark7',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "8th Marker Address", "webidia" ),
+				"param_name"  => "mark8add",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark8',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter 8th Marker  Address", "webidia" )
+			),
+		
+			array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"heading"     => __( "8th Marker InfoBox", "webidia" ),
+				"param_name"  => "mark8info",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark8',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter Infowindows content", "webidia" )
+			),	
+
+
+				array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Add 9th Marker", "webidia" ),
+				"param_name"  => "showmark9",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				'dependency' => array(
+					'element' => 'showmark8',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "9th Marker Address", "webidia" ),
+				"param_name"  => "mark9add",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark9',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter 9th Marker  Address", "webidia" )
+			),
+		
+			array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"heading"     => __( "9th Marker InfoBox", "webidia" ),
+				"param_name"  => "mark9info",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark9',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter Infowindows content", "webidia" )
+			),	
+
+
+					array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Add 10th Marker", "webidia" ),
+				"param_name"  => "showmark10",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				'dependency' => array(
+					'element' => 'showmark9',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "10th Marker Address", "webidia" ),
+				"param_name"  => "mark10add",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark10',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter 10th Marker  Address", "webidia" )
+			),
+		
+			array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"heading"     => __( "10th Marker InfoBox", "webidia" ),
+				"param_name"  => "mark10info",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark10',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter Infowindows content", "webidia" )
+			),	
+
+
+				array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Add 11th Marker", "webidia" ),
+				"param_name"  => "showmark11",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				'dependency' => array(
+					'element' => 'showmark10',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "11th Marker Address", "webidia" ),
+				"param_name"  => "mark11add",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark11',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter 11th Marker  Address", "webidia" )
+			),
+
+		
+			array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"heading"     => __( "11th Marker InfoBox", "webidia" ),
+				"param_name"  => "mark11info",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark11',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter Infowindows content", "webidia" )
+			),	
+
+
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Add 12th Marker", "webidia" ),
+				"param_name"  => "showmark12",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				'dependency' => array(
+					'element' => 'showmark11',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "12th Marker Address", "webidia" ),
+				"param_name"  => "mark12add",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark12',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter 12th Marker  Address", "webidia" )
+			),
+		
+			array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"heading"     => __( "12th Marker InfoBox", "webidia" ),
+				"param_name"  => "mark12info",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark12',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter Infowindows content", "webidia" )
+			),	
+
+
+					array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Add 13th Marker", "webidia" ),
+				"param_name"  => "showmark13",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				'dependency' => array(
+					'element' => 'showmark12',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "13th Marker Address", "webidia" ),
+				"param_name"  => "mark13add",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark13',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter 13th Marker  Address", "webidia" )
+			),
+		
+			array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"heading"     => __( "13th Marker InfoBox", "webidia" ),
+				"param_name"  => "mark13info",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark13',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter Infowindows content", "webidia" )
+			),	
+
+
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Add 14th Marker", "webidia" ),
+				"param_name"  => "showmark14",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				'dependency' => array(
+					'element' => 'showmark13',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "14th Marker Address", "webidia" ),
+				"param_name"  => "mark14add",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark14',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter 14th Marker  Address", "webidia" )
+			),
+		
+			array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"heading"     => __( "14th Marker InfoBox", "webidia" ),
+				"param_name"  => "mark14info",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark14',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter Infowindows content", "webidia" )
+			),
+
+
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Add 15th Marker", "webidia" ),
+				"param_name"  => "showmark15",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				'dependency' => array(
+					'element' => 'showmark14',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"heading"     => __( "15th Marker Address", "webidia" ),
+				"param_name"  => "mark15add",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark15',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter 15th Marker  Address", "webidia" )
+			),
+		
+			array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"heading"     => __( "15th Marker InfoBox", "webidia" ),
+				"param_name"  => "mark15info",
+				"value"       => array(),
+				'dependency' => array(
+					'element' => 'showmark15',
+					'value'   => array( 'true' ),
+				),
+				"description" => __( "Enter Infowindows content", "webidia" )
+			),
+
+
 			array(
 				"type"        => "dropdown",
 				"holder"      => "div",
@@ -271,7 +902,7 @@ function wf_vc_custom() {
 				"heading"     => __( "zoom", "webidia" ),
 				"param_name"  => "zoom",
 				"value"       => __(""),
-				"std"		  => "13",
+				"std"		  => "7",
 				"description" => __( "", "webidia" )
 			),
 			array(
@@ -342,7 +973,7 @@ function wf_vc_custom() {
 				"holder"      => "div",
 				"heading"     => __( "Height", "webidia" ),
 				"param_name"  => "height",
-				"value"       => "200px",
+				"value"       => "600px",
 				"description" => __( "Height for Google map in pixel", "webidia" )
 			),
 			array(
@@ -350,7 +981,7 @@ function wf_vc_custom() {
 				"holder"      => "div",
 				"heading"     => __( "Width", "webidia" ),
 				"param_name"  => "width",
-				"value"       => "200px",
+				"value"       => "100%",
 				"description" => __( "Width for Google map in pixel", "webidia" )
 			),
 		)
@@ -402,6 +1033,15 @@ function add_cta_button_super_color() {
   $param['std'] = 'btn-wf-color';
   //Finally "mutate" param with new values
   vc_update_shortcode_param( 'vc_cta', $param );
+ // add_shortcode_param( 'add_more', 'add_more_settings_field' );
+ // add_shortcode_param('add_more', 'add_more_settings_field', plugins_url( '/WF-Gmap-master/public/js/addmore.js' ) );
 }
-
+/*function add_more_settings_field( $settings, $value ) {
+   return '<div class="add_more_block">'
+             .'<input name="' . esc_attr( $settings['param_name'] ) . '" class="wpb_vc_param_value wpb-textinput ' .
+             esc_attr( $settings['param_name'] ) . ' ' .
+             esc_attr( $settings['type'] ) . '_field" type="text" value="' . esc_attr( $value ) . '" />'
+         .'</div>'
+         .'<button class="add_field_button">Add Marker Address</button>'; // New button element
+}*/
 add_action( 'vc_after_init', 'add_cta_button_super_color' ); /* Note: here we are using vc_after_init because WPBMap::GetParam and mutateParame are available only when default content elements are "mapped" into the system */

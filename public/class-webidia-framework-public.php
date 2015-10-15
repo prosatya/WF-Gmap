@@ -51,6 +51,8 @@ class Webidia_Framework_Public {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+		//add_action('wp_enqueue_scripts', array($this, 'wfs_google_map_script'),1);
+
 
 	}
 
@@ -96,9 +98,14 @@ class Webidia_Framework_Public {
 		 * class.
 		 */
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/webidia-framework-public.js', array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( $this->plugin_name."02" , plugin_dir_url( __FILE__ ) . 'js/gmapsregister.js', array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( $this->plugin_name."01" , plugin_dir_url( __FILE__ ) . 'js/gmaps.js', array( 'jquery' ), $this->version, false );
-
+	wp_enqueue_script( $this->plugin_name."02" ,'http://maps.google.com/maps/api/js?sensor=false', array( 'jquery' ) );
+	wp_enqueue_script( $this->plugin_name."04" , plugin_dir_url( __FILE__ ) . 'js/jquery.gmap.js', array( 'jquery' ), $this->version, false );
 	}
+
+
+			
+
+
+
 
 }

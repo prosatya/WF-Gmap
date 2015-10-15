@@ -1,8 +1,9 @@
 <?php
 function wf_googlemap_func( $atts, $content = null ) {
 	$args = shortcode_atts( 
-    array(  "lat"   => '-12.043333',
-	        "lng"   => '-77.028333',
+    array(  //"lat"   => '-12.043333',
+	        //"lng"   => '-77.028333',
+    	     "address" => 'india',
 	        "hideinfowindows"=>'true',
 	        "navigationcontrol"=>'false',
 	        "maptypecontrol"=>'false',
@@ -21,6 +22,15 @@ function wf_googlemap_func( $atts, $content = null ) {
 	);
 	
 	$content = wpb_js_remove_wpautop( $content, true ); // fix unclosed/unwanted paragraph tags in $content
+
+
+
+$address = $args['address'];
+$formattedAddr = str_replace(' ','+',$address);
+$geocodeFromAddr = file_get_contents('http://maps.googleapis.com/maps/api/geocode/json?address='.$formattedAddr.'&sensor=true_or_false'); 
+        $output1 = json_decode($geocodeFromAddr);
+        $latitude  = $output1->results[0]->geometry->location->lat; 
+        $longitude = $output1->results[0]->geometry->location->lng;
 ?>
 		<style type="text/css">
 			#map {
@@ -33,28 +43,34 @@ function wf_googlemap_func( $atts, $content = null ) {
 			    background: #58B;
 			}
 		</style>
-		<script>
-			jQuery(document).ready(function($) {
-
-				var map = new GMaps({
-			    div: "#map",
-			    lat: <?php echo $args['lat']; ?>,
-			    lng: <?php echo $args['lng']; ?>,
-			    hideInfoWindows: <?php echo $args['hideinfowindows']; ?>,
-				navigationControl: <?php echo $args['navigationcontrol']; ?>,
-				mapTypeControl: <?php echo $args['maptypecontrol']; ?>,
-				zoom: <?php echo $args['zoom']; ?>,
-				//title:<?php echo $args['title']; ?>,
-				zoomControl: <?php echo $args['zoomcontrol']; ?>,
-				streetViewControl: <?php echo $args['streetviewcontrol']; ?>,
-				disableDoubleClickZoom: <?php echo $args['disabledoubleclickzoom']; ?>,
-				scaleControl: <?php echo $args['scalecontrol']; ?>,
-				draggable: <?php echo $args['draggable']; ?>,
-				scrollwheel: <?php echo $args['scrollwheel']; ?>,
-				});
-				
-			});
-		</script>
+ 	
+<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery(document).ready(function () {
+// Define the latitude and longitude positions
+var latitude = parseFloat("<?php echo $latitude; ?>"); // Latitude get from above variable
+var longitude = parseFloat("<?php echo $longitude; ?>"); // Longitude from same
+var latlngPos = new google.maps.LatLng(latitude, longitude);
+// Set up options for the Google map
+var myOptions = {
+zoom: 10,
+center: latlngPos,
+mapTypeId: google.maps.MapTypeId.ROADMAP,
+zoomControlOptions: true,
+zoomControlOptions: {
+style: google.maps.ZoomControlStyle.LARGE
+}
+};
+// Define the map
+map = new google.maps.Map(document.getElementById("map"), myOptions);
+// Add the marker
+var marker = new google.maps.Marker({
+position: latlngPos,
+map: map,
+title: "test"
+});
+});
+</script>
 <?php
 	$wp_googlemap = '<div id="map"></div>';
     

@@ -77,6 +77,10 @@ class Webidia_Framework_Public {
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/webidia-framework-public.css', array(), $this->version, 'all' );
 		wp_enqueue_style( 'megamenu-' . $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/megamenu.css', array(), $this->version, 'all' );
+		wp_enqueue_style( 'wf-owl.carousel-' . $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/owl.carousel.css', array(), $this->version, 'all' );
+		wp_enqueue_style( 'wf-owl.theme-' . $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/owl.theme.css', array(), $this->version, 'all' );
+		wp_enqueue_style( 'wf_owl.transitions-' . $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/owl.transitions.css', array(), $this->version, 'all' );
+
 	}
 
 	/**
@@ -97,9 +101,10 @@ class Webidia_Framework_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/webidia-framework-public.js', array( 'jquery' ), $this->version, false );
-	wp_enqueue_script( $this->plugin_name."02" ,'http://maps.google.com/maps/api/js?sensor=false', array( 'jquery' ) );
+	wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/webidia-framework-public.js', array( 'jquery' ), $this->version, false );
+	wp_enqueue_script( $this->plugin_name."02" ,'http://maps.google.com/maps/api/js?sensor=true', array( 'jquery' ) );
 	wp_enqueue_script( $this->plugin_name."04" , plugin_dir_url( __FILE__ ) . 'js/jquery.gmap.js', array( 'jquery' ), $this->version, false );
+	wp_enqueue_script( $this->plugin_name."04" , plugin_dir_url( __FILE__ ) . '/public/js/owl.carousel.js', array( 'jquery' ), $this->version, false );
 	}
 
 

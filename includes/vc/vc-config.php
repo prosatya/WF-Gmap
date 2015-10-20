@@ -35,7 +35,7 @@ function wf_vc_custom() {
 	vc_map( array(
 		"name"        => __( "WF - Modal Box", "webidia" ),
 		"description" => __( 'Modal popup box' ),
-		"icon"        => get_stylesheet_directory_uri() . "/inc/vc/icons/wf_modal.jpg",
+		"icon"        => plugin_dir_path( dirname( __FILE__ ) ) . "/inc/vc/icons/wf_modal.jpg",
 		"base"        => "modal",
 		"class"       => "",
 		"category"    => __( "Content", "webidia"),
@@ -129,7 +129,7 @@ function wf_vc_custom() {
    vc_map( array(
       "name" => __( "WF - Hero Slider", "webidia" ),
       "description" => __(''),
-      "icon" => get_stylesheet_directory_uri() . "/inc/vc/icons/wf_modal.jpg",
+      "icon" => plugin_dir_path( dirname( __FILE__ ) ) . "/inc/vc/icons/wf_modal.jpg",
       "base" => "wf_hero_slider",
       "class" => "",
       "category" => __( "Content", "webidia"),
@@ -139,7 +139,7 @@ function wf_vc_custom() {
    vc_map( array(
       "name" => __( "WF - Parallax Section", "webidia" ),
       "description" => __(''),
-      "icon" => get_stylesheet_directory_uri() . "/inc/vc/icons/wf_modal.jpg",
+      "icon" => plugin_dir_path( dirname( __FILE__ ) ) . "/inc/vc/icons/wf_modal.jpg",
       "base" => "wf_parallax_background",
       "class" => "",
       "category" => __( "Content", "webidia"),
@@ -149,7 +149,7 @@ function wf_vc_custom() {
    vc_map( array(
       "name" => __( "WF - Pricing Tables", "webidia" ),
       "description" => __(''),
-      "icon" => get_stylesheet_directory_uri() . "/inc/vc/icons/wf_modal.jpg",
+      "icon" => plugin_dir_path( dirname( __FILE__ ) ) . "/inc/vc/icons/wf_modal.jpg",
       "base" => "wf_pricing_table",
       "class" => "",
       "category" => __( "Content", "webidia"),
@@ -159,7 +159,7 @@ function wf_vc_custom() {
 	vc_map( array(
 		"name" => __( "WF - Tooltip", "webidia" ),
 		"description" => __(''),
-		"icon" => get_stylesheet_directory_uri() . "/inc/vc/icons/wf_modal.jpg",
+		"icon" => plugin_dir_path( dirname( __FILE__ ) ) . "/inc/vc/icons/wf_modal.jpg",
 		"base" => "wf_tooltip",
 		"class" => "",
 		"category" => __( "Content", "webidia"),
@@ -208,17 +208,158 @@ function wf_vc_custom() {
    vc_map( array(
       "name" => __( "WF - Overlay Box", "webidia" ),
       "description" => __(''),
-      "icon" => get_stylesheet_directory_uri() . "/inc/vc/icons/wf_modal.jpg",
+      "icon" => plugin_dir_path( dirname( __FILE__ ) ) . "/inc/vc/icons/wf_modal.jpg",
       "base" => "wf_overlay_box",
       "class" => "",
       "category" => __( "Content", "webidia"),
    ) );
 
+
+vc_map( array(
+		"name" => __( "WF - OWL Carousel", "webidia" ),
+		"description" => __(''),
+		"icon" => plugin_dir_path( dirname( __FILE__ ) ) . "/inc/vc/icons/wf_modal.jpg",
+		"base" => "wf_owl_carousel",
+		"class" => "",
+		"category" => __( "Content", "webidia"),
+		"params"      => array(
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"class"       => "",
+				"heading"     => __( "items", "webidia" ),
+				"param_name"  => "items",
+				"value"       => __( 3, "webidia" ),
+				"description" => __( "Slides Per View", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "loop", "webidia" ),
+				"param_name"  => "loop",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				'type' => 'attach_images',
+				'heading' => __( 'Images', 'webidia' ),
+				'param_name' => 'images',
+				'value' => '',
+				'description' => __( 'Select images from media library.', 'webidia' )
+			),
+			array(
+				'type' => 'textfield',
+				'heading' => __( 'Carousel images size', 'webidia' ),
+				'param_name' => 'size',
+				'description' => __( 'Enter image size. Example: thumbnail, medium, large, full or other sizes defined by current theme. Alternatively enter image size in pixels: 200x100 (Width x Height). Leave empty to use "thumbnail" size. If used slides per view, this will be used to define carousel wrapper size.', 'webidia' )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "singleitem", "webidia" ),
+				"param_name"  => "singleitem1",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "AutoPlay", "webidia" ),
+				"param_name"  => "autoplay1",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+			
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Stoponhover", "webidia" ),
+				"param_name"  => "stoponhover1",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Navigation", "webidia" ),
+				"param_name"  => "navigation",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Navigation Possition", "webidia" ),
+				"param_name"  => "navpos",
+				"value"       => array(  __( 'top') => 'top', __( 'center' )=>'center' ),
+				"std"		  => "top",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Autoheight", "webidia" ),
+				"param_name"  => "autoheight1",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+			
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "mouseDrag", "webidia" ),
+				"param_name"  => "mousedrag1",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "touchDrag", "webidia" ),
+				"param_name"  => "touchDrag",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "AddClassActive", "webidia" ),
+				"param_name"  => "addclassactive1",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "pagination", "webidia" ),
+				"param_name"  => "pagination",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+
+			
+			
+		),
+		
+	) );
+
+
+
    // Google maps
    vc_map( array(
       "name" => __( "WF - Google Maps", "webidia" ),
       "description" => __(''),
-      "icon" => get_stylesheet_directory_uri() . "/inc/vc/icons/wf_modal.jpg",
+      "icon" => plugin_dir_path( dirname( __FILE__ ) ) . "/inc/vc/icons/wf_modal.jpg",
       "base" => "wf_google_maps",
       "class" => "",
       "category" => __( "Content", "webidia"),
@@ -891,16 +1032,6 @@ function wf_vc_custom() {
 				"description" => __( "Enter Infowindows content", "webidia" )
 			),
 
-
-			array(
-				"type"        => "dropdown",
-				"holder"      => "div",
-				"heading"     => __( "navigationControl", "webidia" ),
-				"param_name"  => "navigationcontrol",
-				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
-				"std"		  => "false",
-				"description" => __( "", "webidia" )
-			),
 			array(
 				"type"        => "dropdown",
 				"holder"      => "div",
@@ -1005,7 +1136,7 @@ function wf_vc_custom() {
    vc_map( array(
       "name" => __( "WF - Animated Stats", "webidia" ),
       "description" => __(''),
-      "icon" => get_stylesheet_directory_uri() . "/inc/vc/icons/wf_modal.jpg",
+      "icon" => plugin_dir_path( dirname( __FILE__ ) ) . "/inc/vc/icons/wf_modal.jpg",
       "base" => "wf_animated_stats",
       "class" => "",
       "category" => __( "Content", "webidia"),
@@ -1015,7 +1146,7 @@ function wf_vc_custom() {
    vc_map( array(
       "name" => __( "WF - Animated Stats", "webidia" ),
       "description" => __(''),
-      "icon" => get_stylesheet_directory_uri() . "/inc/vc/icons/wf_modal.jpg",
+      "icon" => plugin_dir_path( dirname( __FILE__ ) ) . "/inc/vc/icons/wf_modal.jpg",
       "base" => "wf_countodwn_timer",
       "class" => "",
       "category" => __( "Content", "webidia"),
@@ -1025,7 +1156,7 @@ function wf_vc_custom() {
    vc_map( array(
       "name" => __( "WF - Animated Stats", "webidia" ),
       "description" => __(''),
-      "icon" => get_stylesheet_directory_uri() . "/inc/vc/icons/wf_modal.jpg",
+      "icon" => plugin_dir_path( dirname( __FILE__ ) ) . "/inc/vc/icons/wf_modal.jpg",
       "base" => "wf_carousel",
       "class" => "",
       "category" => __( "Content", "webidia"),

@@ -5,8 +5,7 @@ $args = shortcode_atts(
     array( 
 	        "address" => '',
 	        "hideinfowindows"=>'true',
-	        "navigationcontrol"=>'false',
-	        "maptypecontrol"=>'false',
+	       "maptypecontrol"=>'false',
 			"zoom"=> 7,
 			"title"=>'Test',
 			"showmark1"=>'',
@@ -163,7 +162,7 @@ $mark15add = $args['mark15add'];
 
 
 $output ='';
-$output .= "<div id='".$id."' style='display: block;width: ".$args['width']."; height: ".$args['height']."'></div>";
+$output .= "<div id='".$id."' style='background: #58B;display: block;width: ".$args['width']."; height: ".$args['height']."'></div>";
 
 $output .= "<script type='text/javascript'>
 		jQuery(document).ready(function($) {
@@ -171,16 +170,16 @@ $output .= "<script type='text/javascript'>
 	$('#".$id."').gMap({
 	address: \"".$address."\",
 	zoom: ".$args['zoom'].",
-	draggable: '".$args['draggable']."',
-	scrollwheel: '".$args['scrollwheel']."',
 	controls: {
-	navigationControl: '".$args['navigationcontrol']."',
-	mapTypeControl: '".$args['maptypecontrol']."',
-	zoomControl:'".$args['zoomcontrol']."',
-	streetViewControl: '".$args['streetviewcontrol']."',
-	disableDoubleClickZoom: '".$args['disabledoubleclickzoom']."',
-	scaleControl: '".$args['scalecontrol']."',
+	mapTypeControl: ".$args['maptypecontrol'].",
+	zoomControl:  ".$args['zoomcontrol'].",
+	streetViewControl:  ".$args['streetviewcontrol'].",
+	disableDoubleClickZoom: ".$args['disabledoubleclickzoom'].",
+	scaleControl: ".$args['scalecontrol'].",
 	},
+	
+	scrollwheel: ".$args['scrollwheel'].",
+	draggable: ".$args['draggable'].",
 	markers:[
 		{
 			address: \"".$address."\",

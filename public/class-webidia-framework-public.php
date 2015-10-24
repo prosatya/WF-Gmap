@@ -104,7 +104,6 @@ class Webidia_Framework_Public {
 	wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/webidia-framework-public.js', array( 'jquery' ), $this->version, false );
 	wp_enqueue_script( $this->plugin_name."02" ,'http://maps.google.com/maps/api/js?sensor=true', array( 'jquery' ) );
 	wp_enqueue_script( $this->plugin_name."04" , plugin_dir_url( __FILE__ ) . 'js/jquery.gmap.js', array( 'jquery' ), $this->version, false );
-	wp_enqueue_script( $this->plugin_name."04" , plugin_dir_url( __FILE__ ) . '/public/js/owl.carousel.js', array( 'jquery' ), $this->version, false );
 	}
 
 

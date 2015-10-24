@@ -7,6 +7,9 @@
 	margin-top: 10px;
 	text-align: center;
 }
+.owl-wrapper-outer.autoHeight {
+    height: auto ;
+}
 
 /* Styling Next and Prev buttons */
 

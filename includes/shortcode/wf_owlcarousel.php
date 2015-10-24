@@ -60,7 +60,8 @@ $touchDrag = $args['touchDrag'];
 $pagination = $args['pagination'];
 $loop = $args['loop'];
 $addClassActive = $args['addclassactive1'];
-wp_register_script('js.owl.carousel', plugins_url('/WF-imagecarousel/public/js/owl.carousel.js'));
+wp_enqueue_script( "js.owl.carousel" , plugin_dir_url( __FILE__ ) . 'js/owl.carousel.js', array( 'jquery' ), false );
+//wp_register_script("js.owl.carousel", plugin_dir_url( __FILE__ ).'js/owl.carousel.js'));
 wp_enqueue_script('js.owl.carousel',array( 'jquery' ),false);
 
 $output ='';

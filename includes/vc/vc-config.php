@@ -223,15 +223,7 @@ vc_map( array(
 		"class" => "",
 		"category" => __( "Content", "webidia"),
 		"params"      => array(
-			array(
-				"type"        => "textfield",
-				"holder"      => "div",
-				"class"       => "",
-				"heading"     => __( "items", "webidia" ),
-				"param_name"  => "items",
-				"value"       => __( 3, "webidia" ),
-				"description" => __( "Slides Per View", "webidia" )
-			),
+					
 			array(
 				"type"        => "dropdown",
 				"holder"      => "div",
@@ -260,8 +252,21 @@ vc_map( array(
 				"heading"     => __( "singleitem", "webidia" ),
 				"param_name"  => "singleitem1",
 				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
-				"std"		  => "false",
+				"std"		  => "true",
 				"description" => __( "", "webidia" )
+			),
+				array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"class"       => "",
+				"heading"     => __( "items", "webidia" ),
+				"param_name"  => "items",
+				"value"       => 3,
+				'dependency' => array(
+				'element' => 'singleitem1',
+				'value'   => array( 'false' ),
+			),
+				"description" => __( "Slides Per View", "webidia" )
 			),
 			array(
 				"type"        => "dropdown",

@@ -259,9 +259,9 @@ class Webidia_Framework {
 		include_once( plugin_dir_path( dirname( __FILE__ ) ) . 'includes/shortcode/tooltips.php' );
 		include_once( plugin_dir_path( dirname( __FILE__ ) ) . 'includes/shortcode/wf_googlemaps.php' );
 		include_once( plugin_dir_path( dirname( __FILE__ ) ) . 'includes/shortcode/wf_owlcarousel.php' );
-			
+		include_once( plugin_dir_path( dirname( __FILE__ ) ) . 'includes/shortcode/wf_testimonial.php' );
     }
-
+/*
     public function singleParamHtmlHolder( $param, $value ) {
 		$output = '';
 		// Compatibility fixes
@@ -310,7 +310,7 @@ class Webidia_Framework {
 		}
 
 		return $output;
-	}
+	}*/
 	
 
 }

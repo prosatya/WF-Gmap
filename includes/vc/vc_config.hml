@@ -1,0 +1,482 @@
+// /*array(
+		// 	"type"        => "dropdown",
+		// 	"holder"      => "div",
+		// 	"heading"     => __( "Add 2nd Testimonial", "webidia" ),
+		// 	"param_name"  => "showtesti2",
+		// 	"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+		// 	"std"		  => "false",
+		// 	"description" => __( "", "webidia" )
+		// ),
+
+		// array(
+		// 	"type"        => "textfield",
+		// 	"holder"      => "div",
+		// 	"heading"     => __( "2nd Testimonial  Author Name", "webidia" ),
+		// 	"param_name"  => "authname2",
+		// 	"value"       => array(),
+		// 	'dependency' => array(
+		// 		'element' => 'showtesti2',
+		// 		'value'   => array( 'true' ),
+		// 	),
+		// 	"description" => __( "Enter 2nd  Testimonial  Author Name", "webidia" )
+		// ),
+		
+		// /*array(
+		// 	"type"        => "attach_image",
+		// 	"holder"      => "div",
+		// 	"heading"     => __( " Testimonial Author Image", "webidia" ),
+		// 	"param_name"  => "authimg2",
+		// 	"value"       => array(),
+		// 	'dependency' => array(
+		// 		'element' => 'showtesti2',
+		// 		'value'   => array( 'true' ),
+		// 	),
+		// 	"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		// ),*/
+		
+		// array(
+		// 	"type"        => "textarea",
+		// 	"holder"      => "div",
+		// 	"heading"     => __( "2nd Testimonial Content", "webidia" ),
+		// 	"param_name"  => "tes2info",
+		// 	"value"       => array(),
+		// 	'dependency' => array(
+		// 		'element' => 'showtesti2',
+		// 		'value'   => array( 'true' ),
+		// 	),
+		// 	"description" => __( "Enter Testimonial Content", "webidia" )
+		// ),	
+
+
+
+		// array(
+		// 	"type"        => "dropdown",
+		// 	"holder"      => "div",
+		// 	"heading"     => __( "Add 3rd Testimonial", "webidia" ),
+		// 	"param_name"  => "showtesti3",
+		// 	"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+		// 	"std"		  => "false",
+		// 	"description" => __( "", "webidia" )
+		// ),
+		// array(
+		// 	"type"        => "textfield",
+		// 	"holder"      => "div",
+		// 	"heading"     => __( "3rd Testimonial  Author Name", "webidia" ),
+		// 	"param_name"  => "authname3",
+		// 	"value"       => array(),
+		// 	'dependency' => array(
+		// 		'element' => 'showtesti3',
+		// 		'value'   => array( 'true' ),
+		// 	),
+		// 	"description" => __( "Enter 3rd Testimonial  Author Name", "webidia" )
+		// ),
+		// /*array(
+		// 	"type"        => "attach_image",
+		// 	"holder"      => "div",
+		// 	"heading"     => __( " Testimonial Author Image", "webidia" ),
+		// 	"param_name"  => "authimg3",
+		// 	"value"       => array(),
+		// 	'dependency' => array(
+		// 		'element' => 'showtesti3',
+		// 		'value'   => array( 'true' ),
+		// 	),
+		// 	"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		// ),*/
+		
+		// array(
+		// 	"type"        => "textarea",
+		// 	"holder"      => "div",
+		// 	"heading"     => __( "3rd Testimonial InfoBox", "webidia" ),
+		// 	"param_name"  => "tes3info",
+		// 	"value"       => array(),
+		// 	'dependency' => array(
+		// 		'element' => 'showtesti3',
+		// 		'value'   => array( 'true' ),
+		// 	),
+		// 	"description" => __( "Enter Testimonial Content", "webidia" )
+		// ),	
+
+			
+
+		// array(
+		// 		"type"        => "dropdown",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "Add 4th Testimonial", "webidia" ),
+		// 		"param_name"  => "showtesti4",
+		// 		"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+		// 		"std"		  => "false",
+		// 		"description" => __( "", "webidia" )
+		// 	),
+		// 	array(
+		// 		"type"        => "textfield",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "4th Testimonial  Author Name", "webidia" ),
+		// 		"param_name"  => "authname4",
+		// 		"value"       => array(),
+		// 		'dependency' => array(
+		// 			'element' => 'showtesti4',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "Enter 4th Testimonial  Author Name", "webidia" )
+		// 	),
+		// /*
+		// 	array(
+		// 	"type"        => "attach_image",
+		// 	"holder"      => "div",
+		// 	"heading"     => __( " Testimonial Author Image", "webidia" ),
+		// 	"param_name"  => "authimg4",
+		// 	"value"       => array(),
+		// 	'dependency' => array(
+		// 		'element' => 'showtesti4',
+		// 		'value'   => array( 'true' ),
+		// 	),
+		// 	"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		// ),
+		// */
+		// 	array(
+		// 		"type"        => "textarea",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "4th Testimonial InfoBox", "webidia" ),
+		// 		"param_name"  => "tes4info",
+		// 		"value"       => array(),
+		// 		'dependency' => array(
+		// 			'element' => 'showtesti4',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "Enter Testimonial Content", "webidia" )
+		// 	),	
+
+
+		// array(
+		// 		"type"        => "dropdown",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "Add 5th Testimonial", "webidia" ),
+		// 		"param_name"  => "showtesti5",
+		// 		"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+		// 		"std"		  => "false",
+		// 		"description" => __( "", "webidia" )
+		// 	),
+		// 	array(
+		// 		"type"        => "textfield",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "5th Testimonial  Author Name", "webidia" ),
+		// 		"param_name"  => "authname5",
+		// 		"value"       => array(),
+		// 		'dependency' => array(
+		// 			'element' => 'showtesti5',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "Enter 5th Testimonial  Author Name", "webidia" )
+		// 	),
+		
+		// 	/*array(
+		// 	"type"        => "attach_image",
+		// 	"holder"      => "div",
+		// 	"heading"     => __( " Testimonial Author Image", "webidia" ),
+		// 	"param_name"  => "authimg5",
+		// 	"value"       => array(),
+		// 	'dependency' => array(
+		// 		'element' => 'showtesti5',
+		// 		'value'   => array( 'true' ),
+		// 	),
+		// 	"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		// ),*/
+		
+
+		// 	array(
+		// 		"type"        => "textarea",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "5th Testimonial InfoBox", "webidia" ),
+		// 		"param_name"  => "tes5info",
+		// 		"value"       => array(),
+		// 		'dependency' => array(
+		// 			'element' => 'showtesti5',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "Enter Testimonial Content", "webidia" )
+		// 	),	
+
+		// array(
+		// 		"type"        => "dropdown",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "Add More Additional Testimonials", "webidia" ),
+		// 		"param_name"  => "additionaladd5",
+		// 		"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+		// 		"std"		  => "false",
+		// 		'dependency' => array(
+		// 			'element' => 'showtesti5',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "", "webidia" )
+		// 	),
+
+		// 	array(
+		// 		"type"        => "dropdown",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "Add 6th Testimonial", "webidia" ),
+		// 		"param_name"  => "showtesti6",
+		// 		"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+		// 		"std"		  => "false",
+		// 		'dependency' => array(
+		// 			'element' => 'additionaladd5',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "", "webidia" )
+		// 	),
+		// 	array(
+		// 		"type"        => "textfield",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "6th Testimonial  Author Name", "webidia" ),
+		// 		"param_name"  => "authname6",
+		// 		"value"       => array(),
+		// 		'dependency' => array(
+		// 			'element' => 'showtesti6',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "Enter 6th Testimonial  Author Name", "webidia" )
+		// 	),
+		
+		// 	array(
+		// 	"type"        => "attach_image",
+		// 	"holder"      => "div",
+		// 	"heading"     => __( "Testimonial Author Image", "webidia" ),
+		// 	"param_name"  => "authimg6",
+		// 	"value"       => array(),
+		// 	'dependency' => array(
+		// 		'element' => 'showtesti6',
+		// 		'value'   => array( 'true' ),
+		// 	),
+		// 	"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		// ),
+		
+
+		// 	array(
+		// 		"type"        => "textarea",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "6th Testimonial InfoBox", "webidia" ),
+		// 		"param_name"  => "tes6info",
+		// 		"value"       => array(),
+		// 		'dependency' => array(
+		// 			'element' => 'showtesti6',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "Enter Testimonial Content", "webidia" )
+		// 	),	
+
+		// 	array(
+		// 		"type"        => "dropdown",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "Add 7th Testimonial", "webidia" ),
+		// 		"param_name"  => "showtesti7",
+		// 		"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+		// 		"std"		  => "false",
+		// 		'dependency' => array(
+		// 			'element' => 'additionaladd5',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "", "webidia" )
+		// 	),
+		// 	array(
+		// 		"type"        => "textfield",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "7th Testimonial  Author Name", "webidia" ),
+		// 		"param_name"  => "authname7",
+		// 		"value"       => array(),
+		// 		'dependency' => array(
+		// 			'element' => 'showtesti7',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "Enter 7th Testimonial  Author Name", "webidia" )
+		// 	),
+		
+
+		// 	/*array(
+		// 	"type"        => "attach_image",
+		// 	"holder"      => "div",
+		// 	"heading"     => __( " Testimonial Author Image", "webidia" ),
+		// 	"param_name"  => "authimg7",
+		// 	"value"       => array(),
+		// 	'dependency' => array(
+		// 		'element' => 'showtesti7',
+		// 		'value'   => array( 'true' ),
+		// 	),
+		// 	"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		// ),*/
+		
+
+		// 	array(
+		// 		"type"        => "textarea",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "7th Testimonial Content", "webidia" ),
+		// 		"param_name"  => "tes7info",
+		// 		"value"       => array(),
+		// 		'dependency' => array(
+		// 			'element' => 'showtesti7',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "Enter Testimonial Content", "webidia" )
+		// 	),	
+
+
+
+		// 	array(
+		// 		"type"        => "dropdown",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "Add 8th Testimonial", "webidia" ),
+		// 		"param_name"  => "showtesti8",
+		// 		"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+		// 		"std"		  => "false",
+		// 		'dependency' => array(
+		// 			'element' => 'additionaladd5',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "", "webidia" )
+		// 	),
+		// 	array(
+		// 		"type"        => "textfield",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "8th Testimonial  Author Name", "webidia" ),
+		// 		"param_name"  => "authname8",
+		// 		"value"       => array(),
+		// 		'dependency' => array(
+		// 			'element' => 'showtesti8',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "Enter 8th Testimonial  Author Name", "webidia" )
+		// 	),
+		
+		// 	/*array(
+		// 	"type"        => "attach_image",
+		// 	"holder"      => "div",
+		// 	"heading"     => __( " Testimonial Author Image", "webidia" ),
+		// 	"param_name"  => "authimg8",
+		// 	"value"       => array(),
+		// 	'dependency' => array(
+		// 		'element' => 'showtesti8',
+		// 		'value'   => array( 'true' ),
+		// 	),
+		// 	"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		// ),*/
+		
+
+		// 	array(
+		// 		"type"        => "textarea",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "8th Testimonial InfoBox", "webidia" ),
+		// 		"param_name"  => "tes8info",
+		// 		"value"       => array(),
+		// 		'dependency' => array(
+		// 			'element' => 'showtesti8',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "Enter Testimonial Content", "webidia" )
+		// 	),	
+
+
+		// 		array(
+		// 		"type"        => "dropdown",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "Add 9th Testimonial", "webidia" ),
+		// 		"param_name"  => "showtesti9",
+		// 		"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+		// 		"std"		  => "false",
+		// 		'dependency' => array(
+		// 			'element' => 'additionaladd5',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "", "webidia" )
+		// 	),
+		// 	array(
+		// 		"type"        => "textfield",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "9th Testimonial  Author Name", "webidia" ),
+		// 		"param_name"  => "authname9",
+		// 		"value"       => array(),
+		// 		'dependency' => array(
+		// 			'element' => 'showtesti9',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "Enter 9th Testimonial  Author Name", "webidia" )
+		// 	),
+		
+		// 	/*array(
+		// 	"type"        => "attach_image",
+		// 	"holder"      => "div",
+		// 	"heading"     => __( " Testimonial Author Image", "webidia" ),
+		// 	"param_name"  => "authimg9",
+		// 	"value"       => array(),
+		// 	'dependency' => array(
+		// 		'element' => 'showtesti9',
+		// 		'value'   => array( 'true' ),
+		// 	),
+		// 	"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		// ),*/
+		
+
+		// 	array(
+		// 		"type"        => "textarea",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "9th Testimonial InfoBox", "webidia" ),
+		// 		"param_name"  => "tes9info",
+		// 		"value"       => array(),
+		// 		'dependency' => array(
+		// 			'element' => 'showtesti9',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "Enter Testimonial Content", "webidia" )
+		// 	),	
+
+
+		// 	array(
+		// 		"type"        => "dropdown",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "Add 10th Testimonial", "webidia" ),
+		// 		"param_name"  => "showtesti10",
+		// 		"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+		// 		"std"		  => "false",
+		// 		'dependency' => array(
+		// 			'element' => 'additionaladd5',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "", "webidia" )
+		// 	),
+			
+		// 	array(
+		// 		"type"        => "textfield",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "10th Testimonial  Author Name", "webidia" ),
+		// 		"param_name"  => "authname10",
+		// 		"value"       => array(),
+		// 		'dependency' => array(
+		// 			'element' => 'showtesti10',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "Enter 10th Testimonial  Author Name", "webidia" )
+		// 	),
+		
+		// 	/*array(
+		// 	"type"        => "attach_image",
+		// 	"holder"      => "div",
+		// 	"heading"     => __( " Testimonial Author Image", "webidia" ),
+		// 	"param_name"  => "authimg10",
+		// 	"value"       => array(),
+		// 	'dependency' => array(
+		// 		'element' => 'showtesti10',
+		// 		'value'   => array( 'true' ),
+		// 	),
+		// 	"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		// ),*/
+		
+
+		// 	array(
+		// 		"type"        => "textarea",
+		// 		"holder"      => "div",
+		// 		"heading"     => __( "10th Testimonial Content", "webidia" ),
+		// 		"param_name"  => "tes10info",
+		// 		"value"       => array(),
+		// 		'dependency' => array(
+		// 			'element' => 'showtesti10',
+		// 			'value'   => array( 'true' ),
+		// 		),
+		// 		"description" => __( "Enter Testimonial Content", "webidia" )
+		// 	),	*/

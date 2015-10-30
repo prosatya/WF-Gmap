@@ -214,6 +214,7 @@ function wf_vc_custom() {
       "category" => __( "Content", "webidia"),
    ) );
 
+ // OWl Carousel
 
 vc_map( array(
 		"name" => __( "WF - OWL Carousel", "webidia" ),
@@ -357,6 +358,681 @@ vc_map( array(
 		),
 		
 	) );
+
+
+
+
+//Testimonial Slider
+
+vc_map( array(
+		"name" => __( "WF - Testimonial", "webidia" ),
+		"description" => __(''),
+		"icon" => plugin_dir_path( dirname( __FILE__ ) ) . "/inc/vc/icons/wf_modal.jpg",
+		"base" => "wf_testimonial",
+		"class" => "",
+		"category" => __( "Content", "webidia"),
+		"params"      => array(
+					
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "loop", "webidia" ),
+				"param_name"  => "tesloop",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				'type' => 'textfield',
+				'heading' => __( 'Testimonial images size', 'webidia' ),
+				'param_name' => 'size',
+				'value'=> 'thumbnail',
+				'description' => __( 'Enter image size. Example: thumbnail, medium, large, full or other sizes defined by current theme. Alternatively enter image size in pixels: 200x100 (Width x Height). Leave empty to use "thumbnail" size. If used slides per view, this will be used to define carousel wrapper size.', 'webidia' )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "singleitem", "webidia" ),
+				"param_name"  => "tessingleitem1",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+			
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "AutoPlay", "webidia" ),
+				"param_name"  => "tesautoplay1",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+			
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Stoponhover", "webidia" ),
+				"param_name"  => "tesstoponhover1",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Navigation", "webidia" ),
+				"param_name"  => "tesnavigation",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Navigation Possition", "webidia" ),
+				"param_name"  => "tesnavpos",
+				"value"       => array(  __( 'top') => 'top', __( 'center' )=>'center' ),
+				"std"		  => "center",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "Autoheight", "webidia" ),
+				"param_name"  => "tesautoheight1",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+			
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "mouseDrag", "webidia" ),
+				"param_name"  => "tesmousedrag1",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "false",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "touchDrag", "webidia" ),
+				"param_name"  => "testouchDrag",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "AddClassActive", "webidia" ),
+				"param_name"  => "tesaddclassactive1",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"heading"     => __( "pagination", "webidia" ),
+				"param_name"  => "tespagination",
+				"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+				"std"		  => "true",
+				"description" => __( "", "webidia" )
+			),
+
+	//Testimonial items
+	
+		array(
+			"type"        => "dropdown",
+			"holder"      => "div",
+			"heading"     => __( "Add Testimonial1", "webidia" ),
+			"param_name"  => "showtesti1",
+			"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+			"std"		  => "true",
+			"description" => __( "", "webidia" )
+		),
+		array(
+			"type"        => "textfield",
+			"holder"      => "div",
+			"heading"     => __("Testimonial Author Name", "webidia" ),
+			"param_name"  => "auth_name",
+			"value" => __( "et", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti1',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter  Testimonial  Author Name", "webidia" )
+		),
+		
+		array(
+			"type"        => "attach_image",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Author Image", "webidia" ),
+			"param_name"  => "img_id",
+			"value" => __( "", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti1',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		),
+			
+		array(
+			"type"        => "textarea",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Content", "webidia" ),
+			"param_name"  => "testi_content",
+			"value" => __( "etww", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti1',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter Testimonial Content", "webidia" )
+		),	
+
+/**************/
+
+		array(
+			"type"        => "dropdown",
+			"holder"      => "div",
+			"heading"     => __( "Add Testimonial2", "webidia" ),
+			"param_name"  => "showtesti2",
+			"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+			"std"		  => "false",
+			"description" => __( "", "webidia" )
+		),
+		array(
+			"type"        => "textfield",
+			"holder"      => "div",
+			"heading"     => __("Testimonial Author Name", "webidia" ),
+			"param_name"  => "auth_name2",
+			"value" => __( "et", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti2',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter  Testimonial  Author Name", "webidia" )
+		),
+		
+		array(
+			"type"        => "attach_image",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Author Image", "webidia" ),
+			"param_name"  => "img_id2",
+			"value" => __( "", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti2',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		),
+			
+		array(
+			"type"        => "textarea",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Content", "webidia" ),
+			"param_name"  => "testi_content2",
+			"value" => __( "etww", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti2',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter Testimonial Content", "webidia" )
+		),	
+
+	/**************/
+
+	array(
+			"type"        => "dropdown",
+			"holder"      => "div",
+			"heading"     => __( "Add Testimonial3", "webidia" ),
+			"param_name"  => "showtesti3",
+			"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+			"std"		  => "false",
+			"description" => __( "", "webidia" )
+		),
+		array(
+			"type"        => "textfield",
+			"holder"      => "div",
+			"heading"     => __("Testimonial Author Name", "webidia" ),
+			"param_name"  => "auth_name3",
+			"value" => __( "et", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti3',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter  Testimonial  Author Name", "webidia" )
+		),
+		
+		array(
+			"type"        => "attach_image",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Author Image", "webidia" ),
+			"param_name"  => "img_id3",
+			"value" => __( "", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti3',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		),
+			
+		array(
+			"type"        => "textarea",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Content", "webidia" ),
+			"param_name"  => "testi_content3",
+			"value" => __( "etww", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti3',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter Testimonial Content", "webidia" )
+		),	
+
+	/***********/
+
+	array(
+			"type"        => "dropdown",
+			"holder"      => "div",
+			"heading"     => __( "Add Testimonial4", "webidia" ),
+			"param_name"  => "showtesti4",
+			"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+			"std"		  => "false",
+			"description" => __( "", "webidia" )
+		),
+		array(
+			"type"        => "textfield",
+			"holder"      => "div",
+			"heading"     => __("Testimonial Author Name", "webidia" ),
+			"param_name"  => "auth_name4",
+			"value" => __( "et", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti4',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter  Testimonial  Author Name", "webidia" )
+		),
+		
+		array(
+			"type"        => "attach_image",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Author Image", "webidia" ),
+			"param_name"  => "img_id4",
+			"value" => __( "", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti4',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		),
+			
+		array(
+			"type"        => "textarea",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Content", "webidia" ),
+			"param_name"  => "testi_content4",
+			"value" => __( "etww", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti4',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter Testimonial Content", "webidia" )
+		),
+		/**********/
+
+			array(
+			"type"        => "dropdown",
+			"holder"      => "div",
+			"heading"     => __( "Add Testimonial5", "webidia" ),
+			"param_name"  => "showtesti5",
+			"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+			"std"		  => "false",
+			"description" => __( "", "webidia" )
+		),
+		array(
+			"type"        => "textfield",
+			"holder"      => "div",
+			"heading"     => __("Testimonial Author Name", "webidia" ),
+			"param_name"  => "auth_name5",
+			"value" => __( "et", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti5',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter  Testimonial  Author Name", "webidia" )
+		),
+		
+		array(
+			"type"        => "attach_image",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Author Image", "webidia" ),
+			"param_name"  => "img_id5",
+			"value" => __( "", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti5',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		),
+			
+		array(
+			"type"        => "textarea",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Content", "webidia" ),
+			"param_name"  => "testi_content5",
+			"value" => __( "etww", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti5',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter Testimonial Content", "webidia" )
+		),	
+
+		/********/
+		
+		array(
+		 		"type"        => "dropdown",
+		 		"holder"      => "div",
+		 		"heading"     => __( "Add More Additional Testimonials", "webidia" ),
+		 		"param_name"  => "addmore",
+		 		"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+		 		"std"		  => "false",
+		 		'dependency' => array(
+					'element' => 'showtesti5',
+		 			'value'   => array( 'true' ),
+		 		),
+		 		"description" => __( "", "webidia" )
+		 	),
+
+
+
+		array(
+			"type"        => "dropdown",
+			"holder"      => "div",
+			"heading"     => __( "Add Testimonial6", "webidia" ),
+			"param_name"  => "showtesti6",
+			"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+			"std"		  => "false",
+			'dependency' => array(
+					'element' => 'addmore',
+		 			'value'   => array( 'true' ),
+		 		),
+			"description" => __( "", "webidia" )
+		),
+		array(
+			"type"        => "textfield",
+			"holder"      => "div",
+			"heading"     => __("Testimonial Author Name", "webidia" ),
+			"param_name"  => "auth_name6",
+			"value" => __( "et", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti6',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter  Testimonial  Author Name", "webidia" )
+		),
+		
+		array(
+			"type"        => "attach_image",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Author Image", "webidia" ),
+			"param_name"  => "img_id6",
+			"value" => __( "", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti6',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		),
+			
+		array(
+			"type"        => "textarea",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Content", "webidia" ),
+			"param_name"  => "testi_content6",
+			"value" => __( "etww", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti6',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter Testimonial Content", "webidia" )
+		),	
+/***/
+array(
+			"type"        => "dropdown",
+			"holder"      => "div",
+			"heading"     => __( "Add Testimonial7", "webidia" ),
+			"param_name"  => "showtesti7",
+			"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+			"std"		  => "false",
+			'dependency' => array(
+					'element' => 'addmore',
+		 			'value'   => array( 'true' ),
+		 		),
+			"description" => __( "", "webidia" )
+		),
+		array(
+			"type"        => "textfield",
+			"holder"      => "div",
+			"heading"     => __("Testimonial Author Name", "webidia" ),
+			"param_name"  => "auth_name7",
+			"value" => __( "et", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti7',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter  Testimonial  Author Name", "webidia" )
+		),
+		
+		array(
+			"type"        => "attach_image",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Author Image", "webidia" ),
+			"param_name"  => "img_id7",
+			"value" => __( "", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti7',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		),
+			
+		array(
+			"type"        => "textarea",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Content", "webidia" ),
+			"param_name"  => "testi_content7",
+			"value" => __( "etww", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti7',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter Testimonial Content", "webidia" )
+		),	
+/**********/
+array(
+			"type"        => "dropdown",
+			"holder"      => "div",
+			"heading"     => __( "Add Testimonial8", "webidia" ),
+			"param_name"  => "showtesti8",
+			"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+			"std"		  => "false",
+			'dependency' => array(
+					'element' => 'addmore',
+		 			'value'   => array( 'true' ),
+		 		),
+			"description" => __( "", "webidia" )
+		),
+		array(
+			"type"        => "textfield",
+			"holder"      => "div",
+			"heading"     => __("Testimonial Author Name", "webidia" ),
+			"param_name"  => "auth_name8",
+			"value" => __( "et", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti8',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter  Testimonial  Author Name", "webidia" )
+		),
+		
+		array(
+			"type"        => "attach_image",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Author Image", "webidia" ),
+			"param_name"  => "img_id8",
+			"value" => __( "", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti8',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		),
+			
+		array(
+			"type"        => "textarea",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Content", "webidia" ),
+			"param_name"  => "testi_content8",
+			"value" => __( "etww", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti8',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter Testimonial Content", "webidia" )
+		),	
+/***************/
+array(
+			"type"        => "dropdown",
+			"holder"      => "div",
+			"heading"     => __( "Add Testimonial9", "webidia" ),
+			"param_name"  => "showtesti9",
+			"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+			"std"		  => "false",
+			'dependency' => array(
+					'element' => 'addmore',
+		 			'value'   => array( 'true' ),
+		 		),
+			"description" => __( "", "webidia" )
+		),
+		array(
+			"type"        => "textfield",
+			"holder"      => "div",
+			"heading"     => __("Testimonial Author Name", "webidia" ),
+			"param_name"  => "auth_name9",
+			"value" => __( "et", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti9',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter  Testimonial  Author Name", "webidia" )
+		),
+		
+		array(
+			"type"        => "attach_image",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Author Image", "webidia" ),
+			"param_name"  => "img_id9",
+			"value" => __( "", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti9',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		),
+			
+		array(
+			"type"        => "textarea",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Content", "webidia" ),
+			"param_name"  => "testi_content9",
+			"value" => __( "etww", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti9',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter Testimonial Content", "webidia" )
+		),	
+/***********/
+array(
+			"type"        => "dropdown",
+			"holder"      => "div",
+			"heading"     => __( "Add Testimonial10", "webidia" ),
+			"param_name"  => "showtesti10",
+			"value"       => array(  __( 'Yes') => 'true', __( 'No' )=>'false' ),
+			"std"		  => "false",
+			'dependency' => array(
+					'element' => 'addmore',
+		 			'value'   => array( 'true' ),
+		 		),
+			"description" => __( "", "webidia" )
+		),
+		array(
+			"type"        => "textfield",
+			"holder"      => "div",
+			"heading"     => __("Testimonial Author Name", "webidia" ),
+			"param_name"  => "auth_name10",
+			"value" => __( "et", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti10',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter  Testimonial  Author Name", "webidia" )
+		),
+		
+		array(
+			"type"        => "attach_image",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Author Image", "webidia" ),
+			"param_name"  => "img_id10",
+			"value" => __( "", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti10',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Upload  Testimonial  Author Image", "webidia" )
+		),
+			
+		array(
+			"type"        => "textarea",
+			"holder"      => "div",
+			"heading"     => __( " Testimonial Content", "webidia" ),
+			"param_name"  => "testi_content10",
+			"value" => __( "etww", "webidia" ),
+			'dependency' => array(
+				'element' => 'showtesti10',
+				'value'   => array( 'true' ),
+			),
+			"description" => __( "Enter Testimonial Content", "webidia" )
+		),	
+
+//ENd of Testimonial items
+
+		),
+		
+	) );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -27,8 +27,8 @@ $args = shortcode_atts(
 			"loop"=>'true',
 			"navpos"=>'top',
 			"images"=>'images',
-			"size"=>'thumbnail',
-			"singleitem1" => 'false',
+			"size"=>'full',
+			"singleitem1" => 'true',
 			"autoplay1" => 'true',
 			"stoponhover1" => 'false',
 			"navigation" => 'true',
@@ -61,7 +61,6 @@ $pagination = $args['pagination'];
 $loop = $args['loop'];
 $addClassActive = $args['addclassactive1'];
 wp_enqueue_script( "js.owl.carousel" , plugin_dir_url( __FILE__ ) . 'js/owl.carousel.js', array( 'jquery' ), false );
-//wp_register_script("js.owl.carousel", plugin_dir_url( __FILE__ ).'js/owl.carousel.js'));
 wp_enqueue_script('js.owl.carousel',array( 'jquery' ),false);
 
 $output ='';
@@ -76,11 +75,10 @@ if ( $attach_id > 0 ) {
 ) );
 } else {
 	$post_thumbnail = array();
-	$post_thumbnail['thumbnail'] = '<img src="' .plugin_dir_path( dirname( __FILE__ ) ) . '/inc/vc/icons/wf_modal.jpg" />';
-	$post_thumbnail['p_img_large'][0] = plugin_dir_path( dirname( __FILE__ ) )." /inc/vc/icons/wf_modal.jpg";
-}
-					$thumbnail = $post_thumbnail['thumbnail'];
+	$post_thumbnail['thumbnail'] = '<img src="' .plugin_dir_path( dirname( __FILE__ ) ) . '/images/wf_modal.jpg" />';
+	$post_thumbnail['p_img_large'][0] = plugin_dir_path( dirname( __FILE__ ) )." /images/wf_modal.jpg";
 
+}
  	$thumbnail = $post_thumbnail['thumbnail'];
   $output.='<div class="item">'.$thumbnail.'</div>';
  }
@@ -113,35 +111,42 @@ $output .= '<script type="text/javascript">jQuery(document).ready(function($) {'
 	
 $output.=" });";
  
-
-if ($navigation === 'true') {  
-//$output.="$('.next').click(function(){
-  // jQuery('#".$id."').trigger('owl.next');
-  //})
-  //$('.prev').click(function(){
-   //jQuery('#".$id."').trigger('owl.prev');
-  //}) ";
-}
 $output .= "});</script>";
+if ($singleitem === 'true') {
+	$output.="<style>
+    #".$id." .item img{
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+    .attachment-full {
+    height: auto !important;
+    display: block !important;
+    width: 100% !important;
+}
+#".$id." .item{margin: 0px !important;}
+</style>";
+
+}
 if ($navpos === 'center' ){  
-   $output.="<style>.owl-buttons {left: 0;
+   $output.="<style> #".$id." .owl-buttons {left: 0;
     position: absolute;
     top: 35% !important;
     width: 100% !important;
     opacity: 0.6;
 }#".$id." .item{margin: 3px;}
-.owl-wrapper {
+ #".$id." .owl-wrapper {
     margin-top: 0px !important;
 }
-.owl-prev {
+ #".$id." .owl-prev {
     left: 0 !important;
     position: absolute;
 }
-.owl-next {
+ #".$id." .owl-next {
     position: absolute;
     right: 0!important;
 }
-.owl-prev, .owl-next {
+ #".$id." .owl-prev, #".$id." .owl-next {
     border: medium none !important;
     border-radius: 0 !important;
     color: white;
@@ -152,7 +157,7 @@ if ($navpos === 'center' ){
 }
 </style>";
 }else{
-$output.='<style>#'.$id.' .item{margin: 3px;}.owl-prev, .owl-next {
+$output.='<style>#'.$id.' .item{margin: 3px;} #'.$id.' .owl-prev,#'.$id.' .owl-next {
     border: medium none !important;
     border-radius: 0 !important;
     color: white;
@@ -160,11 +165,11 @@ $output.='<style>#'.$id.' .item{margin: 3px;}.owl-prev, .owl-next {
     margin: 0 auto !important;
     text-align: center;
     background: blue none repeat scroll 0 0 !important;
-}.owl-buttons {
+}#'.$id.' .owl-buttons {
     position: absolute;
     right: 0;
     top: 0;
-}.owl-wrapper {
+}#'.$id.' .owl-wrapper {
     margin-top: 40px;
 }
 
